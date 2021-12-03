@@ -14,16 +14,14 @@
 		<a href="https://pytorch3d.org/tutorials/deform_source_mesh_to_target_mesh">
 			Deform a source mesh to form a target mesh using 3D loss functions</a><br>
 	</div>
-	<div style="position: absolute; top: 15%; left: 50;">
-		<p id="modelNum"> iter #0</p>
-	</div>
+	<p style="position: absolute; top: 15%; left: 50%;" id="modelNum"> iter #0</p>
 	<select id="model-select" style="position: absolute;top: 90%;left: 42%;"></select>
 	<button id="model-button" style="position: absolute;top: 90%;left: 52%;">LOAD MODEL</button>
 	<script src="scoreoutputer.min.js"></script>
 	<script>
 		// 建構子 ScoreOutputer 接受一個字串，該字串為 csv 的檔案名稱
 		// 以下面範例，檔名就為 "109598105(總分: 6).csv"
-		var so = new ScoreOutputer("109598105");
+		var so = new ScoreOutputer("110598036");
 		so.installCSS(function () {
 			// 安裝 bootstrap 的 css，如果在 html 上方引用 bootstrap 5.1.1 的話就不用使用 installCSS ，注意一定要 bootstrap css 5.1.1 版
 			// installCSS 接收一個 callback 當作參數，作為成功安裝 bootstrap css 的回呼函式
@@ -36,9 +34,9 @@
 			//addChild 要比 renderModal 先呼叫
 			so.addChild("場景顯示目標模型", 1, true);
 			so.addChild("場景顯示成果模型", 1, true);
-			so.addChild("執行pytorch3D程式碼產生25個模型", 2, false);
-			so.addChild("可拖動GUI顯示不同階段模型", 3, false);
-			so.addChild("可更換其他模型", 3, false);
+			so.addChild("執行pytorch3D程式碼產生25個模型", 2, true);
+			so.addChild("可拖動GUI顯示不同階段模型", 3, true);
+			so.addChild("可更換其他模型", 3, true);
 
 			//產生自評表，參數如下所示
 			so.renderModal(
